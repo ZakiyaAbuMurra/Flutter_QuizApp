@@ -50,10 +50,14 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                       ),
                       const SizedBox(height: 36),
-                      StepIndicator(
-                          currentStep: questionIndex + 1,
-                          totalSteps:
-                              questionsWithAnswers.length), // Add this line
+
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16.0, vertical: 8.0),
+                        child: StepProgress(
+                            currentStep: questionIndex + 1,
+                            totalSteps: questionsWithAnswers.length),
+                      ), // Add this line
                       const SizedBox(height: 36),
                       Column(
                         children: questionsWithAnswers[questionIndex]
